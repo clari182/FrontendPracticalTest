@@ -12,116 +12,129 @@
   <script src="node_modules/backbone/node_modules/underscore/underscore-min.js"></script>
   <script src="node_modules/backbone/backbone-min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="lib/jquery.cookie.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js"></script>
   <script type="text/javascript" src="scripts/AppView.js"></script>
   <script type="text/javascript" src="scripts/MapView.js"></script>
   <script type="text/javascript" src="scripts/AppRouter.js"></script>
+  <script type="text/javascript" src="scripts/CookieHandler.js"></script>
   <style>
-      #google-map-box {
-        width: 100%;
-        height: 450px;
-      }
-      #dynamic-content{
-        padding-top: 60px;
-      }
-    </style>
+    #google-map-box {
+      width: 100%;
+      height: 450px;
+    }
+    #dynamic-content{
+      padding-top: 60px;
+    }
+  </style>
 
-    </head>
-    <body role="document">
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#home">Frontend Practical Test</a>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#home">Home</a></li>
-              <li><a href="#aboutMe">About me</a></li>
-              <li><a href="#html5">HTML 5</a></li>
-              <li><a href="#css3">CSS 3</a></li>
-              <li><a href="#javascriptt">Javascript</a></li>
-              <li><a href="#performance">Performance</a></li>
-              <li><button type="button" class="btn btn-default navbar-btn"  data-toggle="modal" data-target="#loginModal">Login
-              </button></li>
-            </ul>
-          </div>
-          
-        </div>
-      </nav>
-
-      <div class="container theme-showcase" id="dynamic-content">
-            
+</head>
+<body role="document">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#home">Frontend Practical Test</a>
       </div>
-      
-      <script type="text/html" id="home-template">
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#home">Home</a></li>
+          <li><a href="#aboutMe">About me</a></li>
+          <li><a href="#html5">HTML 5</a></li>
+          <li><a href="#css3">CSS 3</a></li>
+          <li><a href="#javascriptt">Javascript</a></li>
+          <li><a href="#performance">Performance</a></li>
+          <li>
+            <button type="button" class="btn btn-default navbar-btn btn-success" style="display:none" id="loginBtn" data-toggle="modal" data-target="#modal-login">Login
+            </button>
+            <button type="button" class="btn btn-default navbar-btn btn-danger" style="display:none" id="logoutBtn" onclick="removeCookie()">Logout
+            </button>
+            <img class="cookie" src="css/img/cookieMonsterLogin.png" style="display:none; width:40px; height:40px"></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+    <div class="container theme-showcase" id="dynamic-content">
+
+    </div>
+
+    <script type="text/html" id="home-template">
       <div class="jumbotron">
         <h2>Welcome to the Frontend Practical Test</h2>
         <p></p>
       </div>
-      </script>  
-      <script type="text/html" id="about-me-template">
+    </script>  
+    <script type="text/html" id="about-me-template">
       <div class="jumbotron">
         <h2>About me</h2>
         <p></p>
       </div>
-      </script>  
-      <script type="text/html" id="html5-template">
+    </script>  
+    <script type="text/html" id="html5-template">
       <div class="jumbotron">
         <h2>HTML5</h2>
         <p></p>
       </div>
-      </script>  
-      <script type="text/html" id="css3-template">
+    </script>  
+    <script type="text/html" id="css3-template">
       <div class="jumbotron">
         <h2>CSS3</h2>
         <p></p>
       </div>
-      </script>  
-      <script type="text/x-mustache-template" id="gmaps-template"> 
-        <h2>Most breathtaking places from my Europe trip 2015</h2>
-        <p>I had the chance to travel through Europe and visit a lot of countries. But if I had to narrow down the 10 most breathtaking places from the trip, I would chose the ones you see on the map :)</p>
-        <div id="google-map-box">
-        </div>
-      </script>  
-      <script type="text/html" id="performance-template">
-      <div class="jumbotron">
-        <h2>Performance</h2>
-        <p></p>
+    </script>  
+    <script type="text/x-mustache-template" id="gmaps-template"> 
+      <h2>Most breathtaking places from my Europe trip 2015</h2>
+      <p>I had the chance to travel through Europe and visit a lot of countries. But if I had to narrow down the 10 most breathtaking places from the trip, I would chose the ones you see on the map :)</p>
+<div id="google-map-box">
+</div>
+</script>  
+<script type="text/html" id="performance-template">
+  <div class="jumbotron">
+    <h2>Performance</h2>
+    <p></p>
+  </div>
+</script>  
+
+<div id="modal-login" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Login</h4>
       </div>
-      </script>  
-
-      <div id="loginModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Login</h4>
-            </div>
-            <div class="modal-body">
-              <p>Hey there! How do you wish to try the login?</p>             
-              <button type="button" class="btn btn-default">With Local Storage</button>
-              <button type="button" class="btn btn-default">With Cookies</button>             
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-
+      <div class="modal-body">
+        <p>Hey there! This popup gives you the posibility to login and save it in a cookie. You just need to click on the button.</p>
+        <p>You can reload the page and still be logged in. If you click on Logout, the cookie will be destroyed and the cookie monster will starve.</p>
+        <button class="btn btn-default navbar-btn btn-success" onclick="updateCookie()">Yes! Log me in already!</button>
+        <div class="alert alert-danger" role="alert">
+        <strong>Warning!</strong> Since the site isn't published yet you must try this function on IE or Firefox. Chrome doesn't allow cookie saving from local files.
+        You can also start chrome with the --enable-file-cookies flag and it will work.
         </div>
       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
 
-      
-      <script type="text/javascript">
-        var AppRouter = new AppRouter($('#dynamic-content'));
-        Backbone.history.start();
-      </script>
-    </body>
-    </html>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  var AppRouter = new AppRouter($('#dynamic-content'));
+  Backbone.history.start();  
+  $( document ).ready(function() {
+    createButton();        
+  });
+</script>
+</body>
+</html>
