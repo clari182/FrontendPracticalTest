@@ -6,7 +6,8 @@ var AppRouter = Backbone.Router.extend({
     this.aboutMeView = null;
     this.html5View = null;
     this.css3View = null;
-    this.javascriptPerformanceView = null;
+    this.javascripttView = null;
+    this.performanceView = null;
   },
   routes: {
     "": "home",
@@ -14,7 +15,8 @@ var AppRouter = Backbone.Router.extend({
     "aboutMe": "aboutMe",
     "html5": "html5",
     "css3": "css3",
-    "javascriptPerformance": "javascriptPerformance"
+    "javascriptt": "javascriptt",
+    "performance": "performance"
   },
   currentView: null,
   switchView: function(view) {
@@ -74,11 +76,19 @@ var AppRouter = Backbone.Router.extend({
       this.setActiveOption('#css3');
     },
 
-    javascriptPerformance: function () {
-      if (this.javascriptPerformanceView === null){
-        this.javascriptPerformanceView = new Backbone.View(); //todo: change with javascriptPerformanceView
+    javascriptt: function () {
+      if (this.javascripttView === null){
+        this.javascripttView = new Backbone.View(); //todo: change with javascripttView
       }
-      this.switchView(this.javascriptPerformanceView);
-      this.setActiveOption('#javascriptPerformance');
+      this.switchView(this.javascripttView);
+      this.setActiveOption('#javascriptt');
+    },
+
+    performance: function () {
+      if (this.performanceView === null){
+        this.performanceView = new Backbone.View(); //todo: change with performanceView
+      }
+      this.switchView(this.performanceView);
+      this.setActiveOption('#performance');
     }
   });
