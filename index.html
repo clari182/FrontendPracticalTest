@@ -16,6 +16,7 @@
   <script src="https://maps.googleapis.com/maps/api/js"></script>
   <script type="text/javascript" src="scripts/AppView.js"></script>
   <script type="text/javascript" src="scripts/MapView.js"></script>
+  <script type="text/javascript" src="scripts/CarouselView.js"></script>
   <script type="text/javascript" src="scripts/AppRouter.js"></script>
   <script type="text/javascript" src="scripts/CookieHandler.js"></script>
   <style>
@@ -79,62 +80,84 @@
     </script>  
     <script type="text/html" id="html5-template">
       <div class="jumbotron">
-        <h2>HTML5</h2>
-        <p></p>
+        <h2>HTML5</h2>        
+        <div class="carousel-holder"></div>
       </div>
     </script>  
     <script type="text/html" id="css3-template">
       <div class="jumbotron">
-        <h2>CSS3</h2>
-        <p></p>
+        <h2>CSS3</h2>  
+        <div class="carousel-holder"></div>      
       </div>
     </script>  
     <script type="text/x-mustache-template" id="gmaps-template"> 
       <h2>Most breathtaking places from my Europe trip 2015</h2>
       <p>I had the chance to travel through Europe and visit a lot of countries. But if I had to narrow down the 10 most breathtaking places from the trip, I would chose the ones you see on the map :)</p>
-<div id="google-map-box">
-</div>
-</script>  
-<script type="text/html" id="performance-template">
-  <div class="jumbotron">
-    <h2>Performance</h2>
-    <p></p>
-  </div>
-</script>  
-
-<div id="modal-login" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Login</h4>
+      <div id="google-map-box">
       </div>
-      <div class="modal-body">
-        <p>Hey there! This popup gives you the posibility to login and save it in a cookie. You just need to click on the button.</p>
-        <p>You can reload the page and still be logged in. If you click on Logout, the cookie will be destroyed and the cookie monster will starve.</p>
-        <button class="btn btn-default navbar-btn btn-success" onclick="updateCookie()">Yes! Log me in already!</button>
-        <div class="alert alert-danger" role="alert">
-        <strong>Warning!</strong> Since the site isn't published yet you must try this function on IE or Firefox. Chrome doesn't allow cookie saving from local files.
-        You can also start chrome with the --enable-file-cookies flag and it will work.
+    </script>  
+    <script type="text/html" id="performance-template">
+      <div class="jumbotron">
+        <h2>Performance</h2>
+        <div class="carousel-holder"></div>
+      </div>
+    </script>  
+
+    <div id="modal-login" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Login</h4>
+          </div>
+          <div class="modal-body">
+            <p>Hey there! This popup gives you the posibility to login and save it in a cookie. You just need to click on the button.</p>
+            <p>You can reload the page and still be logged in. If you click on Logout, the cookie will be destroyed and the cookie monster will starve.</p>
+            <button class="btn btn-default navbar-btn btn-success" onclick="updateCookie()">Yes! Log me in already!</button>
+            <div class="alert alert-danger" role="alert">
+              <strong>Warning!</strong> Since the site isn't published yet you must try this function on IE or Firefox. Chrome doesn't allow cookie saving from local files.
+              You can also start chrome with the --enable-file-cookies flag and it will work.
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
       </div>
     </div>
 
-  </div>
-</div>
+    <script type="text/html" id="carousel-template">
+      <div class="container marketing">
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="img-circle" src="css/img/cookie.png" alt="Generic placeholder image" width="140" height="140">
+            <h2 class="firstHeader"></h2>
+            <p class="firstText"></p>
+          </div>
+          <div class="col-lg-4">
+            <img class="img-circle" src="css/img/cookie.png" alt="Generic placeholder image" width="140" height="140">
+            <h2 class="secondHeader"></h2>
+            <p class="secondText"></p>
+          </div>
+          <div class="col-lg-4">
+            <img class="img-circle" src="css/img/cookie.png" alt="Generic placeholder image" width="140" height="140">
+            <h2 class="thirdHeader"></h2>
+            <p class="thirdText"></p>
+          </div>
+        </div>
+      </div>
+    </script>
 
 
-<script type="text/javascript">
-  var AppRouter = new AppRouter($('#dynamic-content'));
-  Backbone.history.start();  
-  $( document ).ready(function() {
-    createButton();        
-  });
-</script>
-</body>
+    <script type="text/javascript">
+      var AppRouter = new AppRouter($('#dynamic-content'));
+      Backbone.history.start();  
+      $( document ).ready(function() {
+        createButton();        
+      });
+    </script>
+  </body>
 </html>

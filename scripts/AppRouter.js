@@ -51,7 +51,7 @@ var AppRouter = Backbone.Router.extend({
       $('li').removeClass('active');
 
       // Mark active entry
-      $('li a[href=" + ur  + "]').parents('li').addClass('active');
+      $('li a[href="' + url  + '"]').parents('li').addClass('active');
     },
 
     // Home route
@@ -74,19 +74,63 @@ var AppRouter = Backbone.Router.extend({
 
     // Html5 route
     html5: function() {
+      var firstHeader = 'firstHeader';
+      var firstText = 'firstText';
+
+      var secondHeader = 'secondHeader';
+      var secondText = 'secondText';
+
+      var thirdHeader = 'thirdHeader';
+      var thirdText = 'thirdText';
+
+
       if (this.html5View === null){
         this.html5View = new AppView({template: '#html5-template'});
       }
+
+      var carouselView = new CarouselView({
+        template: '#carousel-template',
+        firstHeader: firstHeader,
+        firstText: firstText,
+        secondHeader: secondHeader,
+        secondText: secondText,
+        thirdHeader: thirdHeader,
+        thirdText: thirdText
+      });
+      carouselView.render();      
+
       this.switchView(this.html5View);
+      this.html5View.$el.find('.carousel-holder').html(carouselView.el);
       this.setActiveOption('#html5');
     },
 
     // Css3 route
     css3: function() {
+      var firstHeader = 'firstHeader';
+      var firstText = 'firstText';
+
+      var secondHeader = 'secondHeader';
+      var secondText = 'secondText';
+
+      var thirdHeader = 'thirdHeader';
+      var thirdText = 'thirdText';
       if (this.css3View === null){
         this.css3View = new AppView({template: '#css3-template'});
       }
+
+      var carouselView = new CarouselView({
+        template: '#carousel-template',
+        firstHeader: firstHeader,
+        firstText: firstText,
+        secondHeader: secondHeader,
+        secondText: secondText,
+        thirdHeader: thirdHeader,
+        thirdText: thirdText
+      });
+      carouselView.render();   
+
       this.switchView(this.css3View);
+      this.css3View.$el.find('.carousel-holder').html(carouselView.el);
       this.setActiveOption('#css3');
     },
 
@@ -95,16 +139,38 @@ var AppRouter = Backbone.Router.extend({
       if (this.javascripttView === null){
         this.javascripttView = new MapView({template: '#gmaps-template'});
       }
-      this.switchView(this.javascripttView);
+      this.switchView(this.javascripttView);      
       this.setActiveOption('#javascriptt');
     },
 
     // Performance route
     performance: function () {
+      var firstHeader = 'firstHeader';
+      var firstText = 'firstText';
+
+      var secondHeader = 'secondHeader';
+      var secondText = 'secondText';
+
+      var thirdHeader = 'thirdHeader';
+      var thirdText = 'thirdText';
+
       if (this.performanceView === null){
         this.performanceView = new AppView({template: '#performance-template'});
       }
+
+      var carouselView = new CarouselView({
+        template: '#carousel-template',
+        firstHeader: firstHeader,
+        firstText: firstText,
+        secondHeader: secondHeader,
+        secondText: secondText,
+        thirdHeader: thirdHeader,
+        thirdText: thirdText
+      });
+      carouselView.render();   
+
       this.switchView(this.performanceView);
+      this.performanceView.$el.find('.carousel-holder').html(carouselView.el);
       this.setActiveOption('#performance');
     }
   });
