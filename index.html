@@ -9,6 +9,7 @@
 
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="shortcut icon" href="css/img/sunglassesIcon.ico">
 
   <script src="lib/jquery.min.js"></script>
   <script src="lib/underscore-min.js"></script>
@@ -18,7 +19,6 @@
   <script src="https://maps.googleapis.com/maps/api/js"></script>
   <script type="text/javascript" src="scripts/AppView.js"></script>
   <script type="text/javascript" src="scripts/MapView.js"></script>
-  <script type="text/javascript" src="scripts/CarouselView.js"></script>
   <script type="text/javascript" src="scripts/AppRouter.js"></script>
   <script type="text/javascript" src="scripts/CookieHandler.js"></script>
 
@@ -61,15 +61,73 @@
     </div>
 
     <script type="text/html" id="home-template">
-      <div class="jumbotron">
-        <h2>Welcome to the Frontend Practical Test</h2>
-        <p></p>
+      <div class="">
+        <h1 class="page-header">Welcome to the Frontend Practical Test</h1>
+        <p>This page has been made for an eventual position at PedidosYa. It is a test that has been designed by PedidosYa to determine the Frontend developer&#39;s skills. It was ask to do the following: </br>
+          <h3>Create a website (could be a single page navigation or diferent pages) with the
+          following sections:</h3>
+          <div class="list-group">
+            <a type="button" class="list-group-item" href="#home">Home: The content of this page is free</a>
+            <a type="button" class="list-group-item" href="#aboutMe">About me: Information about the developer</a>
+            <a type="button" class="list-group-item" href="#html5">HTML 5: Explain 3 HTML 5 new features in your words and why do you think
+            they are important. (you may add references to other websites)</a>
+            <a type="button" class="list-group-item" href="#css3">CSS 3: Explain 3 CSS 3 new properties, show live examples with code
+            examples on the same page</a>
+            <a type="button" class="list-group-item" href="#javascriptt">Javascript: Add a Google Maps map with 10 markers on it (feel free to pick
+            any location)</a>
+            <a type="button" class="list-group-item" href="#performance">Performance: Explain in your words 3 different techniques to optimise any
+            website performance. Can add references to other websites.</a>
+            <a type="button" class="list-group-item">Login: Create a login pop up and on login save this indicator into a cookie.
+            When the user is loggedin (cookie exists) The Login option should say Logout
+            and when pressed should delete the cookie and show the Login option again.</a>
+          </div>
+          <h3>How was it done?</h3>
+          <p>The developing of this page has been done following specific steps that I believe must be done in every developing situation.
+          </p>
+          <h4><span class="badge">1</span>Problem analysis</h4>
+          <p>The first step of software developing is understanding the problem. What is asked of us? For this test it was mainly reading the test subject and trying to understand every step and item needed to be developped. This is where, personally, the visualisation of the page comes. This is when I see how the page will look like. This is surely going to change while I design the solution but it helps me have a vision of the end product.</p>
+          <h4><span class="badge">2</span>Different technologies analysis</h4>
+          <p>Not every technologie is usefull for every problem. It&#39;s important to keep this in mind. Sometimes we know a technology so well that we want to put it everywhere. However sometimes it&#39;s the wrong one for the job.</br>
+          For this test I analysed pure Jquery without using any framework, using BackboneJS, JavascriptMVC, HTML5, CSS and CSS3 and Bootstrap. </br>
+          All of this technologies were apealing to me and I&#39;ve decided to use all of them in some way, except JavascriptMVC. 
+          </p>
+          <h4><span class="badge">3</span>Designing a solution</h4>
+          <p>So far, I&#39;ve decided to use: Pure jQuery, BackboneJs, HTML5, CSS and CSS3 and Bootstrap.
+          </br>The next thing I wanted to do is to devide every task in a section, and be able to navigate through those sections.
+          </br>This is why I decided to put a header bar using the one provided by Bootstrap. To navigate through the sections, I used the Backbone Router (AppRouter.js). I also used a Backbone View for the behavior of all the sections. (AppView.js for sections home, About me, Html5, CSS3 and Performance and MapView.js for the javascript section).
+          </br>Finally for the login, I used pure jQuery to control the cookie (CookieHandler.js)          
+          </p>
+          <h4><span class="badge">4</span>Defining a schedule</h4>
+          <p>This step is purely personal. I analysed how much time was given, how was my personal schedule for this time to define when I was going to implement it.</p>
+          <h4><span class="badge">5</span>Implementing the solution</h4>
+          <p>I don&#39;t think there is much to say about this part :) 
+          </br>Just putting into code what was planned.
+          </p>
+          <h4><span class="badge">6</span>Testing the solution</h4>
+          <p>Must.. Test.. Everythiiing! Foreveeer! Well, until monday at least.</p>
+        </p>
       </div>
     </script>  
     <script type="text/html" id="about-me-template">
-      <div class="jumbotron">
-        <h2>About me</h2>
-        <p></p>
+      <div class="">
+        <h1 class="page-header">About me</h1>
+        <p>Hey! What&#39;s up?!</br>
+        My name is Clara Youdale, I&#39;m a 25 years old french girl born in Cannes but living in Uruguay for the past 15 years. So I feel as uruguayan as french.
+        </br>I&#39;m a software developer by chance! What do I mean? I&#39ll explain... The story begins a long time ago in a galaxy far far away...
+        </br><img src="css/img/star_wars.gif" style="padding:10px;"/>        
+        </br>I&#39;m a developer by chance because when I was about to finish highschool I had literally no idea what I wanted to do with my life... But, one cold winter morning, I went happily (not) to highschool and ORT University had left a poster about a free programming workshop. And since I had nothing to lose, I went! And I loved it! <img src="css/img/heart.png" style="width:30px;height:30px;"/>
+        </br>So the next year I started and now I&#39;m an engineer. <img src="css/img/hat.png" style="width:30px;height:30px;"/></p>
+        <h3 class="page-header">First job</h3>
+        <p>The second year of the career I took a job in a french company that sells a CRM, and I learned a lot!
+        I was mainly a backend developer, programming with Delphi. In my last year I started working in the UI part of the software, because we were changing everything from naked Javascript to jQuery. Aaaaand, UI never left me since then. I really feal that I&#39;ve found the right branch and I hope I will always learn new ways to work with it.
+        </p>
+        <h3 class="page-header">Second job</h3>
+        <p>Three years later I took a new job at Globant where I learned even more! There I learned all about frameworks, mainly BackboneJs. I worked there for one year and a half but I had to quit because I wanted to finish my career and working 8 hours was making it harder. So, I quit, finished my career and went to Europe for 4 months. You can see all about the places I&#39;ve been in the <a href="#javascriptt">Javascript</a> section!</p>
+        <h3 class="page-header">Third job</h3>
+        <p>PedidosYa hopefully! :)</p>
+
+        <h4>Thank you so much for reading until the end, there, have a cookie! <img src="css/img/cookie.png"/ style="width>60px; height:60px"></h4>
+        </p>
       </div>
     </script>  
     <script type="text/html" id="html5-template">
@@ -252,55 +310,6 @@
 
   </div>
 </div>
-
-<script type="text/html" id="carousel-template">
-<div>
-  <div id="myCarousel" class="carousel slide" style="height: 4b00px;">
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-
-        <div class="carousel-caption">
-          <h3 class="firstHeader carousel-header" style="color: #333"></h3>
-          <p class="firstText carousel-text"  style="color: #333"></p>
-        </div>
-      </div>
-
-      <div class="item">
-      
-        <div class="carousel-caption">
-          <h3 class="secondHeader carousel-header" style="color: #333"></h3>
-          <p class="secondText carousel-text" style="color: #333"></p>
-        </div>
-      </div>
-
-      <div class="item">
-      
-        <div class="carousel-caption">
-          <h3 class="thirdHeader carousel-header" style="color: #333"></h3>
-          <p class="thirdText carousel-text" style="color: #333"></p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-  </div>
-</script>
-
 
 <script type="text/javascript">
   var AppRouter = new AppRouter($('#dynamic-content'));
