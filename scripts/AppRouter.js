@@ -77,56 +77,17 @@ var AppRouter = Backbone.Router.extend({
 
     // Html5 route
     html5: function() {
-      var firstHeader = 'Required';
-      var firstText = 'Before Html5, everytime you needed to have a mandatory input, '+
-      'it was essential to have some javascript behind to control that the input wasn\'t empty.'+
-      '\nRequired is an attribute that can be associated with a lot of input types. Its main purpose is'+
-      ' to verify that the field is not empty when the form is submitted. No need for extra code.'+
-      '\nThis is the code example:'+
-      '<div class=\'bs-example\'><pre>&lt;input type=\'date\' required/&gt;</pre></div>';
-
-      var secondHeader = 'Pattern for regex';
-      var secondText = 'In one of my job, we had a project with a client that needed a lot of special information being entered in different section of the application.'+
-      'Some of this information had to follow a specific pattern or contain a specific quantity of numbers and/or special characters. It was very usefull to have the pattern'+
-      'property wich allows you to avoid any unnecesary javascript code to control what the input was filled with. So, the pattern is used for regular expressions and is defined'+
-      'directly in the input. For the next example I am going to use a simple regex to verify that the input is an email address: </br>'+
-      '<pre>&lt;input type="email" pattern="\b&#91;A-Z0-9._%+-&#93;+@&#91;A-Z0-9.-&#93;+\.&#91;A-Z&#93{2,4}\b"&#47;&gt;</pre>';
-
-      var thirdHeader = 'Editable contents';
-      var thirdText = 'thirdText';
-
-
+      
       if (this.html5View === null){
         this.html5View = new AppView({template: '#html5-template'});
       }
 
-      var carouselView = new CarouselView({
-        template: '#carousel-template',
-        firstHeader: firstHeader,
-        firstText: firstText,
-        secondHeader: secondHeader,
-        secondText: secondText,
-        thirdHeader: thirdHeader,
-        thirdText: thirdText
-      });
-      carouselView.render();      
-
       this.switchView(this.html5View);
-      this.html5View.$el.find('.carousel-holder').html(carouselView.el);
-      this.setActiveOption('#html5');
-      $('#myCarousel').carousel({interval: false});
+      this.setActiveOption('#html5');      
     },
 
     // Css3 route
     css3: function() {
-      var firstHeader = 'Columns';
-      var firstText = 'firstText';
-
-      var secondHeader = 'Media queries';
-      var secondText = 'secondText';
-
-      var thirdHeader = 'Generated counters';
-      var thirdText = 'thirdText';
       if (this.css3View === null){
         this.css3View = new AppView({template: '#css3-template'});
       }
@@ -146,32 +107,12 @@ var AppRouter = Backbone.Router.extend({
 
     // Performance route
     performance: function () {
-      var firstHeader = 'Minify javascript and css files';
-      var firstText = 'firstText';
-
-      var secondHeader = 'Use Sprites';
-      var secondText = 'secondText';
-
-      var thirdHeader = 'Use Cache';
-      var thirdText = 'thirdText';
-
+      
       if (this.performanceView === null){
         this.performanceView = new AppView({template: '#performance-template'});
       }
 
-      var carouselView = new CarouselView({
-        template: '#carousel-template',
-        firstHeader: firstHeader,
-        firstText: firstText,
-        secondHeader: secondHeader,
-        secondText: secondText,
-        thirdHeader: thirdHeader,
-        thirdText: thirdText
-      });
-      carouselView.render();   
-
-      this.switchView(this.performanceView);
-      this.performanceView.$el.find('.carousel-holder').html(carouselView.el);
+      this.switchView(this.performanceView);      
       this.setActiveOption('#performance');
     }
   });

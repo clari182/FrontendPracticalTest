@@ -200,27 +200,27 @@
         <p>This section is about 3 Perfomance techniques that I find important. </p> 
         <div class="panel panel-info">
           <div class="panel-heading">
-            <h3 class="panel-title">Minify Javascript and CSS files<h3>
+            <h3 class="panel-title">Minify files<h3>
           </div>
           <div class="panel-body">
-            <p>                             
+            <p>When you create a web application there is always javascript and css code, normally in different files (you should try to separate it from the html). Does files can be heavy for the site and can occur in slow loading which can be a negative point for the user using it. One technique that can help the site load faster and move faster in all its section is minifying the javascript and css files (you can even minify the html files). The minifying process will not alter any of the functionaly of the file, just remove unnecesary code, rename variables with smaller name and a lot of other things. The resulting file will not be easy (at all) to read for the developer, so this is mainly done when the application is going to production where there is no need to look at the code anymore. For this page, I did not minify the javascript, html and css files that I have created so you can still read them. However, I have used the minified versions of libraries and frameworks on which the application depends on.                            
             </p>
           </div>
         </div>
         <div class="panel panel-info">
           <div class="panel-heading">
-            <h3 class="panel-title">User Sprites</h3>
+            <h3 class="panel-title">Use Sprites</h3>
           </div>
           <div class="panel-body">
-           <p></p>                      
+           <p>This technique is strongly related to minimizing the number of HTTP requests the site does. Everytime you need to load an image, this loading requests a request. What sprite does is reunite several images in only one so there is only one HTTP request made for all the images. This helps improving the perfomance of the web application. However it can be hard to create a Sprite for the first time but there are a lot of tools that can help you do it.</p>                      
           </div>        
         </div>
         <div class="panel panel-info">
           <div class="panel-heading">
-            <h3 class="panel-title">User cache<h3>
+            <h3 class="panel-title">Use caching<h3>
           </div>
           <div class="panel-body">
-            <p></p>            
+            <p>I think it is important to save in the cache as much as information as posible. The first time the sites loads, it should be as fast as posible for the first time users, but it is also important to think about the second time users that will reenter the site. If the information is cached, the site will be a lot faster, without needing to re-load data. Web browsers and servers allows you to do this.</p>            
           </div>        
         </div>   
   </div>
