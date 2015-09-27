@@ -7,11 +7,13 @@
 
   <title>Frontend Practical Test</title>
 
-  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="node_modules/backbone/node_modules/underscore/underscore-min.js"></script>
-  <script src="node_modules/backbone/backbone-min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/underscore-min.js"></script>
+  <script src="lib/backbone-min.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
   <script src="lib/jquery.cookie.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js"></script>
   <script type="text/javascript" src="scripts/AppView.js"></script>
@@ -19,15 +21,7 @@
   <script type="text/javascript" src="scripts/CarouselView.js"></script>
   <script type="text/javascript" src="scripts/AppRouter.js"></script>
   <script type="text/javascript" src="scripts/CookieHandler.js"></script>
-  <style>
-    #google-map-box {
-      width: 100%;
-      height: 450px;
-    }
-    #dynamic-content{
-      padding-top: 60px;
-    }
-  </style>
+
 
 </head>
 <body role="document">
@@ -86,10 +80,79 @@
       </div>
     </script>  
     <script type="text/html" id="css3-template">
-      <div class="jumbotron">
+      
         <h2>CSS3</h2>  
-        <div class="carousel-holder"></div>      
-      </div>
+        <p>This section is about 3 new features of CSS3. I have chosen features that I've used at work or at school and that helped to create pages more easily and quicly. The features that I'm going to mention are Columns, Media queries and Text overflow. There are a lot more features that are very usefull with UI developing but this three are the ones I've used the most.</p> 
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Columns<h3>
+          </div>
+          <div class="panel-body">
+            <p>This CSS3 feature alows you to divide a text in different columns. Before this feature, it was
+            necesarry to do this manually via css properties. This is usefull when you want your text to appear in a specific section and display it as if it was a newspaper article.
+            For example, if you have a div but you would like to separated it in various columns you just need to do as follow in your css file:
+            <div class='css3-columns-example-code'><pre><code>.columns-example {
+              -webkit-column-count: 3; &#47;* For browsers Chrome, Safari and Opera *&#47;
+              -moz-column-count: 3; &#47;* Firefox *&#47;
+              column-count: 3;
+              -webkit-column-width: 100px; &#47;* For browsers Chrome, Safari and Opera *&#47;
+              column-width: 100px;
+            }</code></pre></div>
+            <h4>And now the example with this styling:</h4>            
+            <div class="columns-example">Et dixit ad hanc primam css3 pluma. Dicitur columna et pluma sino vos ut aliquid diversum dividunt textum quinae denae. Similis omnibus locis faciunt nonnulli textus suus arāneārum ut exemplum est ut faciam. Forsit est ut diu scribere text funcionalidades ita ostendi potest proprie. Iustus sum scribens verba temere Nunc intellegi potest ita spero. Etenim me movet quam hoc legistis anglicus in finem! The text ut miris modis translatus ad anglicus. Ita hic ire vivo exemplo rem css3 column.</div>            
+            </p>
+          </div>
+        </div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Media queries</h3>
+           
+          </div>
+          <div class="panel-body">
+           <p>The media queries are used to change the styling of a page if something specific happens. For example, I want the styling to change ONLY if the page is viewed on a mobile phone, so I apply a media querie that will trigger when this is satisfy. This is very usefull when you want the page to addapt to different condition and mainting a dynamic look. I've used this for my thesis with our website to adjust some styling to the mobile and tablet views of it. Not only for sizing, but for example for colors. We saw that sometimes things look pretty on a web page with certain colors, but when in mobile version, the result can look messy and unintuitive. This is why we used media queries, so when it was detected that the user was watching the site in a mobile browser, the colors (and other properties) would change to make it look prettier.
+              For example, if you want to change a color when the the page is looked in a smaller version, this is what you should do:
+            </p>
+            <div><pre><code>
+            .media-queries-example {
+              background-color: #E0E0E0;            
+            }
+            .media-queries-example:after{
+              content: "Light panel example";
+            }
+
+            @media (min-width: 700px) {
+              .media-queries-example {
+                background-color: #484848;          
+              }
+              .media-queries-example:after{
+                content: "Dark panel example";
+              }
+            }</code></pre></div>
+            <p>Now the live example. You see a panel with dark grey. When you reduce the browser, the color will change.</p>
+            <div class="panel panel-default">
+              <div class="panel-body media-queries-example">
+              </div>
+            </div>
+          </div>        
+        </div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Text overflow<h3>
+          </div>
+          <div class="panel-body">
+            <p>Text overflow is a feature of CSS3 that gives a nice styling when some text doesn't fit in its holder. I used this a lot in one of my job because we had some information that was sometimes to long to show, and the overflow propertie allowed us to cut this information showing the client that there was still more to read. It's a direct technique without adding extra javascript behind to control this behavior. The code is as easy as shown now:</p>
+            <div><pre><code>
+            .overflow-example {
+              width: 100px;
+              border: 1px solid black;
+              overflow: hidden;
+              text-overflow: ellipsis;  
+            }</code></pre></div>
+            <p>And now the live example:</p>
+            <p class="overflow-example">This is a long text that needs to be cut because it doesn't fit in the box</p>
+          </div>        
+        </div>   
+      
     </script>  
     <script type="text/x-mustache-template" id="gmaps-template"> 
       <h2>Most breathtaking places from my Europe trip 2015</h2>
@@ -115,7 +178,7 @@
       </div>
       <div class="modal-body">
         <p>Hey there! This popup gives you the posibility to login and save it in a cookie. You just need to click on the button.</p>
-        <p>You can reload the page and still be logged in (the cookie name is username). If you click on Logout, the cookie will be destroyed and the cookie monster will starve.</p>
+        <p>You can reload the page and still be logged in (the cookie name is "username"). If you click on Logout, the cookie will be destroyed and the cookie monster will starve.</p>
         
         <div class="alert alert-danger" role="alert">
           <strong>Warning!</strong> Since the site isn't published yet you must try this function on IE or Firefox. Chrome doesn't allow cookie saving from local files.
@@ -143,24 +206,24 @@
       <div class="item active">
 
         <div class="carousel-caption">
-          <h3 class="firstHeader" style="color: #333"></h3>
-          <p class="firstText"  style="color: #333"></p>
+          <h3 class="firstHeader carousel-header" style="color: #333"></h3>
+          <p class="firstText carousel-text"  style="color: #333"></p>
         </div>
       </div>
 
       <div class="item">
       
         <div class="carousel-caption">
-          <h3 class="secondHeader" style="color: #333"></h3>
-          <p class="secondText" style="color: #333"></p>
+          <h3 class="secondHeader carousel-header" style="color: #333"></h3>
+          <p class="secondText carousel-text" style="color: #333"></p>
         </div>
       </div>
 
       <div class="item">
       
         <div class="carousel-caption">
-          <h3 class="thirdHeader" style="color: #333"></h3>
-          <p class="thirdText" style="color: #333"></p>
+          <h3 class="thirdHeader carousel-header" style="color: #333"></h3>
+          <p class="thirdText carousel-text" style="color: #333"></p>
         </div>
       </div>
 

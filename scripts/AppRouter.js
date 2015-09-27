@@ -1,3 +1,6 @@
+/* 
+* The AppRouter file is a Backbone Router that works with the different sections of the page.
+*/
 var AppRouter = Backbone.Router.extend({
   /* 
   * Initializes all the views and models that will be used in this example
@@ -112,31 +115,19 @@ var AppRouter = Backbone.Router.extend({
 
     // Css3 route
     css3: function() {
-      var firstHeader = 'firstHeader';
+      var firstHeader = 'Columns';
       var firstText = 'firstText';
 
-      var secondHeader = 'secondHeader';
+      var secondHeader = 'Media queries';
       var secondText = 'secondText';
 
-      var thirdHeader = 'thirdHeader';
+      var thirdHeader = 'Generated counters';
       var thirdText = 'thirdText';
       if (this.css3View === null){
         this.css3View = new AppView({template: '#css3-template'});
       }
-
-      var carouselView = new CarouselView({
-        template: '#carousel-template',
-        firstHeader: firstHeader,
-        firstText: firstText,
-        secondHeader: secondHeader,
-        secondText: secondText,
-        thirdHeader: thirdHeader,
-        thirdText: thirdText
-      });
-      carouselView.render();   
-
-      this.switchView(this.css3View);
-      this.css3View.$el.find('.carousel-holder').html(carouselView.el);
+      
+      this.switchView(this.css3View);   
       this.setActiveOption('#css3');
     },
 
@@ -151,13 +142,13 @@ var AppRouter = Backbone.Router.extend({
 
     // Performance route
     performance: function () {
-      var firstHeader = 'firstHeader';
+      var firstHeader = 'Minify javascript and css files';
       var firstText = 'firstText';
 
-      var secondHeader = 'secondHeader';
+      var secondHeader = 'Use Sprites';
       var secondText = 'secondText';
 
-      var thirdHeader = 'thirdHeader';
+      var thirdHeader = 'Use Cache';
       var thirdText = 'thirdText';
 
       if (this.performanceView === null){
