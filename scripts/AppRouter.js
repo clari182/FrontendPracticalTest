@@ -85,10 +85,14 @@ var AppRouter = Backbone.Router.extend({
       '\nThis is the code example:'+
       '<div class=\'bs-example\'><pre>&lt;input type=\'date\' required/&gt;</pre></div>';
 
-      var secondHeader = 'secondHeader';
-      var secondText = 'secondText';
+      var secondHeader = 'Pattern for regex';
+      var secondText = 'In one of my job, we had a project with a client that needed a lot of special information being entered in different section of the application.'+
+      'Some of this information had to follow a specific pattern or contain a specific quantity of numbers and/or special characters. It was very usefull to have the pattern'+
+      'property wich allows you to avoid any unnecesary javascript code to control what the input was filled with. So, the pattern is used for regular expressions and is defined'+
+      'directly in the input. For the next example I am going to use a simple regex to verify that the input is an email address: </br>'+
+      '<pre>&lt;input type="email" pattern="\b&#91;A-Z0-9._%+-&#93;+@&#91;A-Z0-9.-&#93;+\.&#91;A-Z&#93{2,4}\b"&#47;&gt;</pre>';
 
-      var thirdHeader = 'thirdHeader';
+      var thirdHeader = 'Editable contents';
       var thirdText = 'thirdText';
 
 

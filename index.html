@@ -73,16 +73,50 @@
       </div>
     </script>  
     <script type="text/html" id="html5-template">
-      <div class="jumbotron">
+      <div>
         <h2>HTML5</h2>
         <p>HTML5 has optimized a lot of our daily work. I am going to explain de 3 new features that had the major impact on my work. They are mainly oriented to inputs.</p>        
-        <div class="carousel-holder"></div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Required<h3>
+          </div>
+          <div class="panel-body">
+            <p>Before Html5, everytime you needed to have a mandatory input, it was essential to have some javascript behind to control that the input was not empty.
+            </br>Required is an attribute that can be associated with a lot of input types. Its main purpose is to verify that the field is not empty when the form is submitted. No need for extra code. This is why I think this feature is important, it saves a lot of time programation wise.
+            </br>This is the code example:
+      <div class="bs-example"><pre>&lt;input type="date" required/&gt;</pre></div>                  
+            </p>
+          </div>
+        </div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Pattern for regex</h3>
+           
+          </div>
+          <div class="panel-body">
+           <p>In one of my job, we had a project with a client that needed a lot of special information being entered in different section of the application.
+              Some of this information had to follow a specific pattern or contain a specific quantity of numbers and/or special characters. It was very usefull to have the pattern property wich allows you to avoid any unnecesary javascript code to control what the input was filled with. So, the pattern is used for regular expressions and is defined directly in the input. For the next example I am going to use a simple regex to verify that the input is an email address: </br>
+            </p>
+            <div><pre><code>&lt;input type="email" pattern="\b&#91;A-Z0-9._%+-&#93;+@&#91;A-Z0-9.-&#93;+\.&#91;A-Z&#93{2,4}\b"&#47;&gt;</code></pre></div>            
+          </div>        
+        </div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Editable contents<h3>
+          </div>
+          <div class="panel-body">
+            <p>This feature is very important for me because it enhances the dynamic part of the UI and the site becomes a lot more user friendly. For example when you go to your profile on some social media, sometimes you want to edit something, and going to Settings > Edit or just click on the Edit button can be a little bit annoying sometimes. If the content is editable you just need to click on what you want to change and change it and that is it! No need for extra clicks. We used a similar approach in one of our project but without the property, wich was very hard to accomplish. We had to do some javascript behind that would capture de click event and hide the label and show an input instead. With the editablecontent property you can just add it to the input and it will automaticaly do all the work for you. So I thinkg this feature is important for users but also for programmers.</p>
+            <div><pre><code>
+              &lt;div class="editable-div" contenteditable="true"&gt;&lt;&#47;div&gt;
+            </code></pre></div>            
+          </div>        
+        </div>   
       </div>
     </script>  
     <script type="text/html" id="css3-template">
       
         <h2>CSS3</h2>  
-        <p>This section is about 3 new features of CSS3. I have chosen features that I've used at work or at school and that helped to create pages more easily and quicly. The features that I'm going to mention are Columns, Media queries and Text overflow. There are a lot more features that are very usefull with UI developing but this three are the ones I've used the most.</p> 
+        <p>This section is about 3 new features of CSS3. I have chosen features that I have used at work or at school and that helped to create pages more easily and quicly. The features that I am going to mention are Columns, Media queries and Text overflow. There are a lot more features that are very usefull with UI developing but this three are the ones Ihave used the most.</p> 
         <div class="panel panel-info">
           <div class="panel-heading">
             <h3 class="panel-title">Columns<h3>
@@ -109,7 +143,7 @@
            
           </div>
           <div class="panel-body">
-           <p>The media queries are used to change the styling of a page if something specific happens. For example, I want the styling to change ONLY if the page is viewed on a mobile phone, so I apply a media querie that will trigger when this is satisfy. This is very usefull when you want the page to addapt to different condition and mainting a dynamic look. I've used this for my thesis with our website to adjust some styling to the mobile and tablet views of it. Not only for sizing, but for example for colors. We saw that sometimes things look pretty on a web page with certain colors, but when in mobile version, the result can look messy and unintuitive. This is why we used media queries, so when it was detected that the user was watching the site in a mobile browser, the colors (and other properties) would change to make it look prettier.
+           <p>The media queries are used to change the styling of a page if something specific happens. For example, I want the styling to change ONLY if the page is viewed on a mobile phone, so I apply a media querie that will trigger when this is satisfy. This is very usefull when you want the page to addapt to different condition and mainting a dynamic look. I have used this for my thesis with our website to adjust some styling to the mobile and tablet views of it. Not only for sizing, but for example for colors. We saw that sometimes things look pretty on a web page with certain colors, but when in mobile version, the result can look messy and unintuitive. This is why we used media queries, so when it was detected that the user was watching the site in a mobile browser, the colors (and other properties) would change to make it look prettier.
               For example, if you want to change a color when the the page is looked in a smaller version, this is what you should do:
             </p>
             <div><pre><code>
@@ -140,7 +174,7 @@
             <h3 class="panel-title">Text overflow<h3>
           </div>
           <div class="panel-body">
-            <p>Text overflow is a feature of CSS3 that gives a nice styling when some text doesn't fit in its holder. I used this a lot in one of my job because we had some information that was sometimes to long to show, and the overflow propertie allowed us to cut this information showing the client that there was still more to read. It's a direct technique without adding extra javascript behind to control this behavior. The code is as easy as shown now:</p>
+            <p>Text overflow is a feature of CSS3 that gives a nice styling when some text does not fit in its holder. I used this a lot in one of my job because we had some information that was sometimes to long to show, and the overflow propertie allowed us to cut this information showing the client that there was still more to read. It is a direct technique without adding extra javascript behind to control this behavior. The code is as easy as shown now:</p>
             <div><pre><code>
             .overflow-example {
               width: 100px;
@@ -149,7 +183,7 @@
               text-overflow: ellipsis;  
             }</code></pre></div>
             <p>And now the live example:</p>
-            <p class="overflow-example">This is a long text that needs to be cut because it doesn't fit in the box</p>
+            <p class="overflow-example">This is a long text that needs to be cut because it does not fit in the box</p>
           </div>        
         </div>   
       
@@ -161,9 +195,34 @@
 </div>
 </script>  
 <script type="text/html" id="performance-template">
-  <div class="jumbotron">
-    <h2>Performance</h2>
-    <div class="carousel-holder"></div>
+  <div>
+    <h2>Perfomance</h2>  
+        <p>This section is about 3 Perfomance techniques that I find important. </p> 
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Minify Javascript and CSS files<h3>
+          </div>
+          <div class="panel-body">
+            <p>                             
+            </p>
+          </div>
+        </div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">User Sprites</h3>
+          </div>
+          <div class="panel-body">
+           <p></p>                      
+          </div>        
+        </div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">User cache<h3>
+          </div>
+          <div class="panel-body">
+            <p></p>            
+          </div>        
+        </div>   
   </div>
 </script>  
 
