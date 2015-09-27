@@ -17,7 +17,7 @@ var CarouselView = Backbone.View.extend	({
 	 * It renders the view with the provided template and adds it to the HTML
 	 */
 	render: function() {		
-		var content = $(this.template);
+		var content = $($(this.template).html());
 		content.find('.firstHeader').html(this.firstHeader);
 		content.find('.firstText').html(this.firstText);
 		content.find('.secondHeader').html(this.secondHeader);
@@ -25,6 +25,7 @@ var CarouselView = Backbone.View.extend	({
 		content.find('.thirdHeader').html(this.thirdHeader);
 		content.find('.thirdText').html(this.thirdText);
 		$(this.el).html(content.html());
+		//content.find("#myCarousel").carousel();
 
 		return this;
 	},

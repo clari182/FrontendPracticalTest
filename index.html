@@ -80,7 +80,8 @@
     </script>  
     <script type="text/html" id="html5-template">
       <div class="jumbotron">
-        <h2>HTML5</h2>        
+        <h2>HTML5</h2>
+        <p>HTML5 has optimized a lot of our daily work. I am going to explain de 3 new features that had the major impact on my work. They are mainly oriented to inputs.</p>        
         <div class="carousel-holder"></div>
       </div>
     </script>  
@@ -93,71 +94,98 @@
     <script type="text/x-mustache-template" id="gmaps-template"> 
       <h2>Most breathtaking places from my Europe trip 2015</h2>
       <p>I had the chance to travel through Europe and visit a lot of countries. But if I had to narrow down the 10 most breathtaking places from the trip, I would chose the ones you see on the map :)</p>
-      <div id="google-map-box">
-      </div>
-    </script>  
-    <script type="text/html" id="performance-template">
-      <div class="jumbotron">
-        <h2>Performance</h2>
-        <div class="carousel-holder"></div>
-      </div>
-    </script>  
+<div id="google-map-box">
+</div>
+</script>  
+<script type="text/html" id="performance-template">
+  <div class="jumbotron">
+    <h2>Performance</h2>
+    <div class="carousel-holder"></div>
+  </div>
+</script>  
 
-    <div id="modal-login" class="modal fade" role="dialog">
-      <div class="modal-dialog">
+<div id="modal-login" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Login</h4>
-          </div>
-          <div class="modal-body">
-            <p>Hey there! This popup gives you the posibility to login and save it in a cookie. You just need to click on the button.</p>
-            <p>You can reload the page and still be logged in. If you click on Logout, the cookie will be destroyed and the cookie monster will starve.</p>
-            <button class="btn btn-default navbar-btn btn-success" onclick="updateCookie()">Yes! Log me in already!</button>
-            <div class="alert alert-danger" role="alert">
-              <strong>Warning!</strong> Since the site isn't published yet you must try this function on IE or Firefox. Chrome doesn't allow cookie saving from local files.
-              You can also start chrome with the --enable-file-cookies flag and it will work.
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Login</h4>
+      </div>
+      <div class="modal-body">
+        <p>Hey there! This popup gives you the posibility to login and save it in a cookie. You just need to click on the button.</p>
+        <p>You can reload the page and still be logged in (the cookie name is username). If you click on Logout, the cookie will be destroyed and the cookie monster will starve.</p>
+        
+        <div class="alert alert-danger" role="alert">
+          <strong>Warning!</strong> Since the site isn't published yet you must try this function on IE or Firefox. Chrome doesn't allow cookie saving from local files.
+          You can also start chrome with the --enable-file-cookies flag and it will work.
         </div>
-
+        <button class="btn btn-default navbar-btn btn-success" onclick="updateCookie()">OK! Log me in already!</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
 
-    <script type="text/html" id="carousel-template">
-      <div class="container marketing">
-        <div class="row">
-          <div class="col-lg-4">
-            <img class="img-circle" src="css/img/cookie.png" alt="Generic placeholder image" width="140" height="140">
-            <h2 class="firstHeader"></h2>
-            <p class="firstText"></p>
-          </div>
-          <div class="col-lg-4">
-            <img class="img-circle" src="css/img/cookie.png" alt="Generic placeholder image" width="140" height="140">
-            <h2 class="secondHeader"></h2>
-            <p class="secondText"></p>
-          </div>
-          <div class="col-lg-4">
-            <img class="img-circle" src="css/img/cookie.png" alt="Generic placeholder image" width="140" height="140">
-            <h2 class="thirdHeader"></h2>
-            <p class="thirdText"></p>
-          </div>
+  </div>
+</div>
+
+<script type="text/html" id="carousel-template">
+<div>
+  <div id="myCarousel" class="carousel slide" style="height: 4b00px;">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+
+        <div class="carousel-caption">
+          <h3 class="firstHeader" style="color: #333"></h3>
+          <p class="firstText"  style="color: #333"></p>
         </div>
       </div>
-    </script>
+
+      <div class="item">
+      
+        <div class="carousel-caption">
+          <h3 class="secondHeader" style="color: #333"></h3>
+          <p class="secondText" style="color: #333"></p>
+        </div>
+      </div>
+
+      <div class="item">
+      
+        <div class="carousel-caption">
+          <h3 class="thirdHeader" style="color: #333"></h3>
+          <p class="thirdText" style="color: #333"></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  </div>
+</script>
 
 
-    <script type="text/javascript">
-      var AppRouter = new AppRouter($('#dynamic-content'));
-      Backbone.history.start();  
-      $( document ).ready(function() {
-        createButton();        
-      });
-    </script>
-  </body>
+<script type="text/javascript">
+  var AppRouter = new AppRouter($('#dynamic-content'));
+  Backbone.history.start();  
+  $( document ).ready(function() {
+    createButton();        
+  });
+</script>
+</body>
 </html>

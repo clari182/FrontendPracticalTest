@@ -74,8 +74,13 @@ var AppRouter = Backbone.Router.extend({
 
     // Html5 route
     html5: function() {
-      var firstHeader = 'firstHeader';
-      var firstText = 'firstText';
+      var firstHeader = 'Required';
+      var firstText = 'Before Html5, everytime you needed to have a mandatory input, '+
+      'it was essential to have some javascript behind to control that the input wasn\'t empty.'+
+      '\nRequired is an attribute that can be associated with a lot of input types. Its main purpose is'+
+      ' to verify that the field is not empty when the form is submitted. No need for extra code.'+
+      '\nThis is the code example:'+
+      '<div class=\'bs-example\'><pre>&lt;input type=\'date\' required/&gt;</pre></div>';
 
       var secondHeader = 'secondHeader';
       var secondText = 'secondText';
@@ -102,6 +107,7 @@ var AppRouter = Backbone.Router.extend({
       this.switchView(this.html5View);
       this.html5View.$el.find('.carousel-holder').html(carouselView.el);
       this.setActiveOption('#html5');
+      $('#myCarousel').carousel({interval: false});
     },
 
     // Css3 route
