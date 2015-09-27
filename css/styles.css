@@ -32,9 +32,9 @@
 }
 
 .overflow-example {
-  width: 400px;
-  border: 1px solid black;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;  
+	width: 400px;
+	border: 1px solid black;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;  
 }

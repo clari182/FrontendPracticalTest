@@ -12,16 +12,16 @@ var MapView = Backbone.View.extend({
     * Once the View is initialized this function creates the map with its information
     */
     activateMap: function () {
-         centerMap = new google.maps.LatLng(55.6712674, 12.5608388);
+        centerMap = new google.maps.LatLng(55.6712674, 12.5608388);
 
-         mapOptions = {
+        mapOptions = {
             center: centerMap,
             zoom: 3,
             5: google.maps.MapTypeId.ROADMAP
         };
 
         map = new google.maps.Map(this.$el.find('#google-map-box')[0],
-                                      mapOptions);
+          mapOptions);
 
         /* The Markers are created using the same variable. 
         * Another way to do so is to create a MarkerView and a MarkerCollection 
@@ -88,7 +88,7 @@ var MapView = Backbone.View.extend({
         });
 
         google.maps.event.trigger(map, 'resize');
-           
+
         google.maps.event.trigger($('#google-map-box'), 'resize');
     },
 
@@ -96,9 +96,9 @@ var MapView = Backbone.View.extend({
     * It renders the map in two steps:
     * 1) It puts the template html in the map element
     * 2) It creates the map with activateMap    
-    */
-    render: function () {
-        this.$el.html($(this.template).html());
-        this.activateMap();       
-    }
+*/
+render: function () {
+    this.$el.html($(this.template).html());
+    this.activateMap();       
+}
 });

@@ -8,19 +8,19 @@ var AppView = Backbone.View.extend	({
 	/* 
 	 * Keeps the template provided in the creation
 	 */
-	initialize: function(options) {
-		this.template = options.template;
-	},
+	 initialize: function(options) {
+	 	this.template = options.template;
+	 },
 
 	/*
 	 * It renders the view with the provided template and adds it to the HTML
 	 */
-	render: function() {
-		var content = $(this.template).html();
-		$(this.el).html(content);
+	 render: function() {
+	 	var content = $(this.template).html();
+	 	$(this.el).html(content);
 
-		return this;
-	},
+	 	return this;
+	 },
 
 	/*
 	* Used to empy and remove an element from the DOM
