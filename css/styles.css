@@ -19,10 +19,10 @@
 	background-color: #E0E0E0;            
 }
 .media-queries-example:after{
-	content: "Light panel example";
+	content: "Oh! The panel has changed!";
 }
 
-@media (min-width: 700px) {
+@media (min-width: 850px) {
 	.media-queries-example {
 		background-color: #484848;          
 	}
